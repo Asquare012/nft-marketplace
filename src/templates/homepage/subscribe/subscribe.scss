@@ -1,0 +1,184 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+$dim-white: #c7c5c5;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Subscribe {
+    height: 500px;
+    @include flex;
+
+    .Sub-container {
+        padding: 3% 7%;
+        height: 70%;
+        display: flex;
+        gap: 5%;
+        background-color: $secondary-bg;
+        border-radius: 15px;
+
+        div {
+            width: 50%;
+            height: 100%;
+        }
+
+        .Sub-img {
+            @include flex;
+            border-radius: 15px;
+
+            img {
+                border-radius: 15px;
+            }
+        }
+
+        .Sub-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            p {
+                &:first-child {
+                    font-size: 28px;
+                    padding-bottom: 10px;
+                    font-weight: bold;
+                    padding-right: 20%;
+                }
+
+                &:nth-child(2) {
+                    font-size: 14px;
+                    padding-bottom: 30px;
+                    padding-right: 20%;
+                    color: $dim-white;
+                }
+
+                &:last-child {
+                    display: flex;
+
+                    input,
+                    button {
+                        border: none;
+                        outline: none;
+                        border-radius: 10px;
+                    }
+
+                    input {
+                        width: 50%;
+                        height: 40px;
+                        color: $primary-bg;
+                        font-size: 15px;
+                        padding-left: 15px;
+
+                        &::placeholder {
+                            color: $primary-bg;
+                            font-size: 12px;
+                        }
+                    }
+
+                    button {
+                        width: 40%;
+                        background-color: $main;
+                        @include flex;
+                        font-size: 12px;
+                        letter-spacing: 1.5px;
+                        margin-left: -10%;
+
+                        img {
+                            padding-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    .Subscribe {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .Subscribe {
+        .Sub-container {
+            .Sub-info {
+                p {
+                    &:last-child {
+                        flex-direction: column;
+
+                        input,
+                        button {
+                            height: 40px;
+                            width: 80%;
+                            border-radius: 25px;
+                        }
+
+                        button {
+                            margin: 15px 0 0 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width:800px) {
+    .Subscribe {
+        height: 750px;
+        margin: 50px 0 0 0;
+
+        .Sub-container {
+            flex-direction: column;
+            height: 90%;
+
+            .Sub-img,
+            .Sub-info {
+                width: 100%;
+            }
+
+            .Sub-img {
+                img {
+                    height: 90%;
+                }
+            }
+
+            .Sub-info {
+                p {
+
+                    &:first-child {
+                        padding-bottom: 20px;
+                        font-size: 27px;
+                        padding-right: 0;
+                    }
+
+                    &:nth-child(2) {
+                        padding-right: 0;
+                        padding-bottom: 40px;
+                        font-size: 17px;
+                    }
+
+                    &:last-child {
+
+                        input,
+                        button {
+                            height: 50px;
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

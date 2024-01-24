@@ -1,0 +1,134 @@
+// COLORS
+// background
+$secondary-bg: #3B3B3B;
+// label
+$label: #858584;
+
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Categories {
+    margin-top: 120px;
+    padding: 0 8%;
+
+    .Categories-top {
+        padding-bottom: 30px;
+
+        h1 {
+            height: 10%;
+            font-size: 27px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .Categories-bottom {
+        height: 90%;
+
+        ul {
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            place-items: center;
+            margin-left: -5%;
+
+            li {
+                list-style: none;
+                height: 200px;
+                width: 70%;
+                border-radius: 15px;
+                background-color: $secondary-bg;
+                margin-bottom: 30px;
+                cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.02);
+                }
+
+                .Top {
+                    height: 75%;
+                    border-radius: 15px 15px 0 0;
+
+                    .Icon {
+                        @include flex;
+                        height: 100%;
+                        width: 100%;
+                        backdrop-filter: blur(1px);
+                    }
+                }
+
+                .Bottom {
+                    height: 25%;
+                    font-size: 16px;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 10%;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    .Categories {
+        padding: 0 6%;
+
+        .Categories-bottom {
+            ul {
+                margin-left: -1%;
+
+                li {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .Categories {
+        .Categories-bottom {
+            ul {
+                margin-left: -0.5%;
+
+                li {
+                    width: 90%;
+                    height: 200px;
+
+                    .Bottom {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width:650px) {
+    .Categories {
+        .Categories-top {
+            padding-left: 2%;
+        }
+
+        .Categories-bottom {
+            ul {
+                grid-template-columns: repeat(2, 1fr);
+
+                li {
+                    height: 190px;
+
+                    .Bottom {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

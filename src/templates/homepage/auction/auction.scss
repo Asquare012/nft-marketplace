@@ -1,0 +1,239 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// label
+$label: #858584;
+// font
+$white: #ffffff;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Auction {
+    padding: 0 8%;
+    margin: 100px 0 0 0;
+    height: 600px;
+    background-color: red;
+    display: flex;
+    align-items: flex-end;
+    background: url("./images/main.png");
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 50px;
+
+    .Auction-info {
+        height: 40%;
+        width: 100%;
+
+        .Info-top {
+            height: 75%;
+            display: flex;
+
+            .Top-left {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                p {
+                    display: inline;
+
+                    &:first-child {
+                        background-color: $primary-bg;
+                        padding: 8px 30px;
+                        margin-bottom: 30px;
+                        border-radius: 20px;
+                        @include flex;
+
+                        img {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    &:last-child {
+                        font-size: 45px;
+                        font-weight: bold
+                    }
+                }
+            }
+
+            .Top-right {
+                width: 50%;
+                height: 120%;
+                font-family: 'Space Mono', monospace;
+                @include flex;
+
+                .Countdown-container {
+                    height: 90%;
+                    width: 80%;
+                    border-radius: 15px;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding-left: 5%;
+                    background-color: #85858460;
+
+                    div {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .Title {
+                        font-size: 16px;
+                        padding-bottom: 10px;
+                    }
+
+                    .Countdown {
+                        ul {
+                            display: flex;
+                            gap: 10%;
+
+                            li {
+                                list-style: none;
+                                display: flex;
+                                flex-direction: column;
+                                text-align: center;
+
+                                span {
+                                    font-size: 50px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .Info-bottom {
+            height: 25%;
+
+            button {
+                border: none;
+                outline: none;
+                padding: 12px 35px;
+                border-radius: 15px;
+                @include flex;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                margin-bottom: 50px;
+                background: none;
+                cursor: pointer;
+                background-color: $white;
+                color: #000000;
+                transition: background 0.2s ease-in-out;
+
+                img {
+                    padding-right: 5px;
+                }
+
+                &:hover {
+                    background: $main;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    .Auction {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width:960px) {
+    .Auction {
+        .Auction-info {
+            .Info-top {
+                .Top-right {
+                    .Countdown-container {
+                        width: 90%;
+
+                        .Countdown {
+                            ul {
+                                li {
+                                    span {
+                                        font-size: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:690px) {
+    .Auction {
+
+        .Auction-info {
+            .Info-top {
+                .Top-right {
+                    .Countdown-container {
+                        width: 100%;
+
+                        .Countdown {
+                            ul {
+                                li {
+                                    span {
+                                        font-size: 40px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width:690px) {
+    .Auction {
+        height: 680px;
+
+        .Auction-info {
+            padding-top: 100px;
+            height: 100%;
+
+            .Info-top {
+                flex-direction: column;
+
+                .Top-left {
+                    width: 100%;
+                }
+
+                .Top-right {
+                    width: 100%;
+
+                    .Countdown-container {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .Info-bottom {
+                margin-top: 40px;
+
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

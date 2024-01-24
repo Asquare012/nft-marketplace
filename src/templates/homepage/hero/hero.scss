@@ -1,0 +1,273 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+$dim-white: #d6d3d3;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hero {
+    height: 690px;
+
+    // main hero
+    main {
+        height: 85%;
+        padding: 30px 8% 0 8%;
+
+        .Main-top {
+            height: 80%;
+            display: flex;
+
+            .Top-left {
+                width: 50%;
+                padding-top: 50px;
+
+                h1 {
+                    font-size: 50px;
+                    padding-bottom: 40px;
+                    letter-spacing: 1.5px;
+                    line-height: 60px;
+                }
+
+                h2 {
+                    padding-bottom: 40px;
+                    letter-spacing: 1.5px;
+                    padding-right: 8%;
+                    line-height: 28px;
+                    font-weight: lighter;
+                    color: $dim-white;
+                }
+            }
+
+            .Top-right {
+                width: 50%;
+                @include flex;
+
+                .Top-right-container {
+                    margin-top: 50px;
+                    height: 90%;
+                    width: 80%;
+                    transition: transform 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+
+                    .Container-image {
+                        height: 70%;
+                    }
+
+                    .Container-info {
+                        height: 30%;
+                        background-color: $secondary-bg;
+                        border-radius: 0 0 15px 15px;
+                        padding-left: 5%;
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+
+                        .Info-title {
+                            font-size: 18px;
+                            padding-bottom: 10px;
+                            letter-spacing: 1.5px;
+                        }
+
+                        .Info-id {
+                            display: flex;
+                            align-items: center;
+                            letter-spacing: 1.5px;
+
+                            img {
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .Main-bottom {
+            height: 10%;
+            margin-top: -8%;
+
+            button {
+                border: none;
+                outline: none;
+                background-color: $main;
+                padding: 12px 30px;
+                border-radius: 15px;
+                @include flex;
+                font-size: 16px;
+                letter-spacing: 1.5px;
+                margin-bottom: 50px;
+                cursor: pointer;
+                transition: background 0.2s ease-in-out;
+
+                img {
+                    padding-right: 5px;
+                }
+
+                &:hover {
+                    border: 2px solid $main;
+                    background: none;
+                    padding: 10px 28px;
+                    color: $main;
+                }
+            }
+
+            ul {
+                display: flex;
+
+                li {
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 8%;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    text-align: center;
+
+                    span {
+                        font-size: 30px;
+                        font-weight: bold;
+                        padding-bottom: 5px;
+                        font-family: 'Space Mono', monospace;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:1130px) {
+    .Hero {
+
+        // main
+        main {
+            margin-top: 10px;
+            padding: 30px 5% 0 5%;
+        }
+    }
+}
+
+@media screen and (max-width:1105px) {
+    .Hero {
+
+        // main
+        main {
+            margin-top: 90px;
+            padding: 30px 5% 0 5%;
+        }
+    }
+}
+
+
+// MOBILE
+@media screen and (max-width:800px) {
+    .Hero {
+        height: auto;
+
+        main {
+            padding: 50px 5% 0 0;
+
+            .Main-top {
+                flex-direction: column;
+
+                .Top-left {
+                    width: 100%;
+                    padding: 0 0 0 5%;
+
+                    h1 {
+                        font-size: 40px;
+                        padding-bottom: 10px;
+                        line-height: 40px;
+                    }
+
+                    h2 {
+                        font-size: 18px;
+                        padding-right: 0;
+                    }
+                }
+
+                .Top-right {
+                    width: 100%;
+                    margin-top: -30px;
+
+                    .Top-right-container {
+                        padding: 0 2% 0 5%;
+                        width: 100%;
+                        height: 370px;
+                    }
+                }
+            }
+
+            .Main-bottom {
+                margin: 50px 0;
+                padding: 0 5%;
+
+                button {
+                    width: 100%;
+                    height: 55px;
+                }
+
+                ul {
+
+                    li {
+                        margin-right: 15%;
+                        font-size: 13px;
+                        width: 100%;
+                        margin: 0 5% 0 0;
+
+                        span {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// smaller mobile
+@media screen and (max-width:400px) {
+    .Hero {
+        main {
+            padding: 30px 2% 0 2%;
+
+            .Main-top {
+                padding: 0 2% 0 0;
+
+                .Top-left {
+                    h1 {
+                        font-size: 30px;
+                    }
+
+                    h2 {
+                        font-size: 16px;
+                    }
+                }
+
+                .Top-right {
+                    width: 100%;
+                    margin-top: -50px;
+
+                    .Top-right-container {
+                        padding: 0 2% 0 5%;
+                        width: 100%;
+                        height: 330px;
+                    }
+                }
+            }
+        }
+    }
+}

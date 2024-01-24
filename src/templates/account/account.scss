@@ -1,0 +1,191 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+$dim-white: #d6d3d3;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Account {
+    height: 600px;
+    display: flex;
+
+    div {
+        width: 50%;
+    }
+
+    .Account-left {
+        background: url("./images/login.png");
+        background-size: cover;
+        background-position: center;
+    }
+
+    .Account-right {
+        height: 90%;
+        padding-left: 5%;
+        @include flex;
+        flex-direction: column;
+        width: 60%;
+
+        div {
+            width: 100%;
+        }
+
+        .Right-top {
+            margin-bottom: 50px;
+
+            h1 {
+                font-size: 30px;
+                padding-bottom: 10px;
+                letter-spacing: 2px;
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: lighter;
+                color: $dim-white;
+                padding-right: 20%;
+            }
+        }
+
+        .Right-bottom {
+            form {
+                p {
+                    height: 45px;
+                    width: 70%;
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+
+                    img {
+                        margin-right: -6%;
+                        z-index: 1;
+                    }
+
+                    input {
+                        height: 100%;
+                        width: 100%;
+                        padding-left: 7%;
+                        border-radius: 25px;
+                        border: none;
+                        outline: none;
+                        background-color: white;
+                        color: $primary-bg;
+                        font-size: 13px;
+
+                        &::placeholder {
+                            padding-left: 2%;
+                            color: $primary-bg;
+                            font-size: 13px;
+                        }
+                    }
+
+                    &:last-child {
+                        input {
+                            background-color: $main;
+                            padding: 0;
+                            margin: 0;
+                            color: $white;
+                            font-size: 15px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1050px) {}
+
+.Account {
+    .Account-right {
+        margin-top: 50px;
+    }
+}
+
+// mobile
+@media screen and (max-width:730px) {
+    .Account {
+        height: 800px;
+        flex-direction: column;
+
+        div {
+            width: 100%;
+        }
+
+        .Account-left {
+            height: 100%;
+            height: 100%;
+        }
+
+        .Account-right {
+            width: 100%;
+            height: 100%;
+            padding-left: 0;
+
+
+
+            .Right-top {
+                width: 100%;
+                @include flex;
+                flex-direction: column;
+                text-align: center;
+
+                h3 {
+                    padding-right: 0;
+                    padding: 0 2%
+                }
+            }
+
+            .Right-bottom {
+                @include flex;
+
+                form {
+                    @include flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    p {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .Account {
+        .Account-left {
+            height: 500px;
+        }
+
+        .Account-right {
+
+            .Right-bottom {
+                form {
+                    p {
+                        width: 90%;
+
+                        img {
+                            margin-right: -7%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

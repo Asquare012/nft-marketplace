@@ -1,0 +1,26 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $primary-bg;
+  overflow-x: hidden;
+}

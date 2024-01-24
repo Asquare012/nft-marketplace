@@ -1,0 +1,198 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+$dim-white: #c7c5c5;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: $secondary-bg;
+    padding: 0 8%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .Footer-left {
+        p {
+            color: $dim-white;
+            font-size: 15px;
+
+            &:first-child {
+                font-size: 20px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                padding-bottom: 30px;
+                color: $white;
+
+                img {
+                    margin-right: 5px;
+                }
+            }
+
+            &:nth-child(2) {
+                padding-right: 20%;
+                padding-bottom: 30px;
+            }
+
+            &:last-child {
+                ul {
+                    display: flex;
+                    padding-top: 3px;
+
+                    li {
+                        list-style: none;
+                        margin-right: 5%;
+                    }
+                }
+            }
+        }
+    }
+
+    .Footer-center {
+        padding-left: 5%;
+
+        p {
+
+            &:first-child {
+                font-size: 20px;
+                font-weight: bold;
+                padding-bottom: 30px;
+                color: $white;
+            }
+
+            &:last-child {
+                ul {
+                    li {
+                        list-style: none;
+                        margin-bottom: 20px;
+                        color: $dim-white;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .Footer-right {
+        p {
+            &:first-child {
+                font-size: 20px;
+                padding-bottom: 30px;
+                font-weight: bold;
+            }
+
+            &:nth-child(2) {
+                font-size: 15px;
+                padding-bottom: 20px;
+                padding-right: 20%;
+                line-height: 20px;
+                color: $dim-white;
+            }
+
+            &:last-child {
+                display: flex;
+
+                input,
+                button {
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                }
+
+                input {
+                    width: 50%;
+                    height: 40px;
+                    color: $primary-bg;
+                    font-size: 15px;
+                    padding-left: 15px;
+
+                    &::placeholder {
+                        color: $primary-bg;
+                        font-size: 12px;
+                    }
+                }
+
+                button {
+                    width: 40%;
+                    background-color: $main;
+                    @include flex;
+                    font-size: 12px;
+                    letter-spacing: 1.5px;
+                    margin-left: -3%;
+
+                    img {
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    footer {
+        padding: 0 5%;
+    }
+}
+
+// mobile
+@media screen and (max-width:800px) {
+    footer {
+        height: 600px;
+        flex-direction: column;
+        padding: 50px 0 50px 5%;
+        margin-top: 40px;
+
+        div {
+            width: 100%;
+        }
+
+        .Footer-left {
+            padding-bottom: 10px;
+        }
+
+        .Footer-center {
+            padding-left: 0;
+        }
+
+        .Footer-right {
+
+            p {
+                &:last-child {
+                    flex-direction: column;
+
+                    input,
+                    button {
+                        height: 40px;
+                        width: 90%;
+                        border-radius: 25px;
+                    }
+
+                    button {
+                        margin: 15px 0 0 2px;
+                    }
+                }
+            }
+        }
+    }
+}

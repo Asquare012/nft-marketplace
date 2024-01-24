@@ -1,0 +1,254 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// label
+$label: #858584;
+// font
+$white: #ffffff;
+$dim-white: #d6d3d3;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Rankings {
+    background-color: $primary-bg;
+    margin-bottom: 50px;
+
+    .Rankings-top {
+        height: 250px;
+        width: 100%;
+        padding: 0 8%;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-weight: lighter;
+            font-size: 16px;
+            color: $dim-white;
+        }
+
+        .Nav {
+            height: 50px;
+            display: flex;
+            margin-top: 40px;
+
+            div {
+                width: 50%;
+                height: 100%;
+                @include flex;
+                font-size: 14px;
+                font-weight: bold;
+                background-color: $primary-bg;
+                cursor: pointer;
+
+                &:first-child {
+                    border-bottom: 2px solid $label;
+                }
+            }
+        }
+    }
+
+    .Rankings-bottom {
+        height: auto;
+        padding: 20px 8% 0 8%;
+
+        .Bottom-header {
+            height: 50px;
+            @include flex;
+
+            ul {
+                height: 90%;
+                width: 100%;
+                border: 1px solid $secondary-bg;
+                border-radius: 25px;
+                display: flex;
+                align-items: center;
+
+                li {
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    padding-right: 10%;
+                    color: $label;
+
+                    &:first-child {
+                        padding: 0 37% 0 10%;
+                    }
+                }
+            }
+        }
+
+        .Bottom-info {
+
+            ul {
+                li {
+                    list-style: none;
+                    height: 60px;
+                    width: 100%;
+                    border-radius: 15px;
+                    background-color: $secondary-bg;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 5%;
+                    margin-top: 12px;
+                    cursor: pointer;
+
+                    span {
+                        font-family: 'Space Mono', monospace;
+                    }
+
+                    .Num {
+                        width: 23px;
+                        height: 23px;
+                        background-color: $primary-bg;
+                        border-radius: 50%;
+                        margin-right: 20px;
+                        color: $label;
+                        font-weight: bolder;
+                        @include flex;
+                    }
+
+                    .Name {
+                        font-size: 13px;
+                        font-weight: 600;
+                        padding-left: 10px;
+                        width: 40%;
+                        letter-spacing: 1px;
+                    }
+
+                    .Change {
+                        color: #00AC4F;
+                        padding-right: 11%;
+                    }
+
+                    .NFT {
+                        padding-right: 14%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    .Rankings {
+        margin-top: 100px;
+
+        .Rankings-top {
+            padding: 0 5%;
+        }
+
+        .Rankings-bottom {
+            padding: 20px 5% 0 5%;
+        }
+    }
+}
+
+@media screen and (max-width:1130px) {
+    .Rankings {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width:1105px) {
+    .Rankings {
+        margin-top: 100px;
+
+        .Rankings-bottom {
+            .Bottom-header {
+                ul {
+                    li {
+                        &:first-child {
+                            width: 55%;
+                        }
+
+                        &:nth-child(3) {
+                            display: none;
+                        }
+
+                        &:nth-child(2) {
+                            padding-right: 15%;
+                        }
+                    }
+                }
+            }
+
+            .Bottom-info {
+                ul {
+                    li {
+                        .Name {
+                            width: 42%;
+                        }
+
+                        .NFT {
+                            display: none;
+                        }
+
+                        .Change {
+                            padding-right: 15%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .Rankings {
+        .Rankings-top {
+            h1 {
+                font-size: 30px;
+            }
+        }
+
+        .Rankings-bottom {
+            .Bottom-header {
+                ul {
+                    li {
+                        &:first-child {
+                            width: 70%;
+                        }
+
+                        &:nth-child(2) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .Bottom-info {
+                ul {
+                    li {
+                        .Num {
+                            margin-right: 5px;
+                        }
+
+                        .Name {
+                            font-size: 14px;
+                            width: 50%;
+                        }
+
+                        .Change {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

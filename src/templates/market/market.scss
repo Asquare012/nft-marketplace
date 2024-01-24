@@ -1,0 +1,246 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// label
+$label: #858584;
+// font
+$white: #ffffff;
+$dim-white: #d6d3d3;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Market {
+    height: auto;
+    border-bottom: 2px solid $primary-bg;
+
+    .Market-top {
+        height: 320px;
+        width: 100%;
+        padding: 0 8%;
+        background-color: $primary-bg;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-weight: lighter;
+            font-size: 16px;
+            color: $dim-white;
+        }
+
+        .Search {
+            display: flex;
+            align-items: center;
+
+            input {
+                width: 90%;
+                height: 45px;
+                border: none;
+                outline: none;
+                margin-right: -5%;
+                border-radius: 10px;
+                font-size: 15px;
+                padding-left: 30px;
+                color: $dim-white;
+                background-color: $primary-bg;
+                border: 1px solid $secondary-bg;
+
+                &::placeholder {
+                    font-size: 15px;
+                    padding-left: 5px;
+                }
+            }
+        }
+
+        .Nav {
+            height: 50px;
+            display: flex;
+            margin-top: 40px;
+
+            div {
+                width: 50%;
+                height: 100%;
+                @include flex;
+                font-size: 15px;
+                font-weight: bold;
+                background-color: $primary-bg;
+                cursor: pointer;
+
+                span {
+                    padding: 2px 5px;
+                    border-radius: 25px;
+                    background-color: $secondary-bg;
+                    margin-left: 5px;
+                    font-weight: lighter;
+                    font-size: 13px;
+                }
+
+                &:first-child {
+                    border-bottom: 2px solid $label;
+                }
+            }
+        }
+    }
+
+    .Market-bottom {
+        width: 100%;
+        background-color: $secondary-bg;
+
+        .Bottom-container {
+            padding: 0 8%;
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                place-items: center;
+                margin-left: -5%;
+                padding-top: 50px;
+
+                li {
+                    list-style: none;
+                    height: 320px;
+                    width: 70%;
+                    margin-bottom: 50px;
+                    background-color: $primary-bg;
+                    border-radius: 15px;
+                    transition: transform 0.2s ease-in-out;
+
+                    &:hover {
+                        transform: scale(1.03);
+                    }
+
+                    .Top {
+                        height: 60%;
+                    }
+
+                    .Bottom {
+                        height: 40%;
+                        padding-left: 5%;
+
+                        .Info {
+                            font-size: 16px;
+                            padding: 10px 0 4px 0;
+
+                            p {
+                                &:first-child {
+                                    font-size: 18px;
+                                    font-weight: bold;
+                                    padding-bottom: 5px;
+                                }
+
+                                &:last-child {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 13px;
+
+                                    img {
+                                        margin-right: 6px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .Amount {
+                            display: flex;
+                            margin-top: 10px;
+
+                            div {
+                                display: flex;
+                                flex-direction: column;
+                                width: 50%;
+                                font-size: 14px;
+                                font-family: 'Space Mono', monospace;
+
+                                span {
+                                    color: $label;
+                                    font-size: 13px;
+                                    padding-bottom: 5px;
+                                }
+
+                                &:last-child {
+                                    text-align: right;
+                                    padding-right: 14%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1130px) {
+    .Market {
+        .Market-top {
+            padding: 0 5%;
+        }
+
+        .Market-bottom {
+            .Bottom-container {
+                padding: 0 5%;
+
+                ul {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1130px) {
+    .Market {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:1105px) {
+    .Market {
+        margin-top: 120px;
+    }
+}
+
+// mobile
+@media screen and (max-width:660px) {
+    .Market {
+        .Market-top {
+            h1 {
+                font-size: 30px;
+            }
+
+            .Search {
+                input {
+                    margin-right: -10%;
+                    width: 100%;
+                    padding-left: 3%;
+                }
+            }
+        }
+
+        .Market-bottom {
+            .Bottom-container {
+                ul {
+                    grid-template-columns: 1fr;
+
+                    li {
+                        width: 90%;
+                        height: 340px;
+                    }
+                }
+            }
+        }
+    }
+}

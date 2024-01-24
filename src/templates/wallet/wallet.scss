@@ -1,0 +1,153 @@
+// COLORS
+// call-to-action
+$main: #A259FF;
+// background
+$primary-bg: #2B2B2B;
+$secondary-bg: #3B3B3B;
+// font
+$white: #ffffff;
+$dim-white: #d6d3d3;
+
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Wallet {
+    height: 600px;
+    display: flex;
+    align-items: center;
+
+    div {
+        height: 100%;
+    }
+
+    .Wallet-left {
+        width: 45%;
+        background: url("./images/wallet.png");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .Wallet-right {
+        height: 70%;
+        padding-left: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 55%;
+
+        div {
+            width: 100%;
+        }
+
+        .Right-top {
+            margin-bottom: 50px;
+
+            h1 {
+                font-size: 30px;
+                padding-bottom: 10px;
+                letter-spacing: 2px;
+            }
+
+            h3 {
+                font-size: 16px;
+                font-weight: lighter;
+                color: $dim-white;
+                padding-right: 20%;
+            }
+        }
+
+        .Right-bottom {
+            ul {
+                li {
+                    list-style: none;
+                    height: 60px;
+                    width: 60%;
+                    margin-bottom: 30px;
+                    border: 1px solid $main;
+                    border-radius: 15px;
+                    font-size: 17px;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 5%;
+                    background-color: $secondary-bg;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease-in-out;
+
+                    img {
+                        margin-right: 15px;
+                    }
+
+                    &:hover {
+                        background-color: $main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// tablet
+@media screen and (max-width:1050px) {
+    .Wallet {
+        .Wallet-left {
+            width: 50%;
+        }
+
+        .Wallet-right {
+            padding-top: 20px;
+
+            .Right-bottom {
+                ul {
+                    li {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width:650px) {
+    .Wallet {
+        height: 700px;
+        flex-direction: column;
+
+        .Wallet-left {
+            width: 100%;
+        }
+
+        .Wallet-right {
+            padding: 30px 0 0 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .Right-top {
+                @include flex;
+                flex-direction: column;
+
+                h3 {
+                    padding: 0 4%;
+                    text-align: center;
+                }
+            }
+
+            .Right-bottom {
+                ul {
+                    @include flex;
+                    flex-direction: column;
+
+                    li {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
