@@ -119,11 +119,12 @@ $dim-white: #d6d3d3;
                         color: $label;
                         font-weight: bolder;
                         @include flex;
+                        font-size: 10px;
                     }
 
                     .Name {
                         font-size: 13px;
-                        font-weight: 600;
+                        font-weight: 500;
                         padding-left: 10px;
                         width: 40%;
                         letter-spacing: 1px;
@@ -240,7 +241,7 @@ $dim-white: #d6d3d3;
 
                         .Name {
                             font-size: 14px;
-                            width: 50%;
+                            width: 45%;
                         }
 
                         .Change {
