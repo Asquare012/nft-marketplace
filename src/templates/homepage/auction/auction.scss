@@ -19,7 +19,6 @@ $white: #ffffff;
     padding: 0 8%;
     margin: 100px 0 0 0;
     height: 600px;
-    background-color: red;
     display: flex;
     align-items: flex-end;
     background: url("./images/main.png");
@@ -222,13 +221,22 @@ $white: #ffffff;
 
                     .Countdown-container {
                         width: 100%;
+
+                        .Countdown {
+                            ul {
+                                li {
+                                    span {
+                                        font-size: 35px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
 
             .Info-bottom {
                 margin-top: 40px;
-
 
                 button {
                     width: 100%;
